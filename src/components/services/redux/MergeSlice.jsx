@@ -12,7 +12,7 @@ const initialState = {
 export const mergePdf = createAsyncThunk('mergePdf', async (request_data) => {
   try {
     const { data } = await axios.post(API, { request_data, request_meta }, { headers });
-    console.log(data.response_data.outputs)
+   
     return data.response_data.outputs;
   } catch (err) {
     return Promise.reject(err.message);
